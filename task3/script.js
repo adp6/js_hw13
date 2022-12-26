@@ -78,12 +78,14 @@ window.onload = ()=>{
         let isSortedPopulation = false;
         diameterBtn.onclick = ()=>{
             if(!isSorted){
+                data.results.sort((a,b)=> b.population - a.population);
                 data.results.sort((a,b)=> a.diameter - b.diameter);
                 isSorted = true;
                 card()
             }
             else{
                 data.results.sort((a,b)=> b.diameter - a.diameter);
+                data.results.sort((a,b)=> b.population - a.population);
                 isSorted = false;
                 card()
                 }
@@ -93,11 +95,13 @@ window.onload = ()=>{
         let populationBtn = document.querySelector('.population')
         populationBtn.onclick = ()=>{
             if(!isSortedPopulation){
+                data.results.sort((a,b)=> b.diameter - a.diameter);
                 data.results.sort((a,b)=> a.population - b.population);
                 isSortedPopulation = true;
                 card()
             }
             else{
+                data.results.sort((a,b)=> b.diameter - a.diameter);
                 data.results.sort((a,b)=> b.population - a.population);
                 isSortedPopulation = false;
                 card()
